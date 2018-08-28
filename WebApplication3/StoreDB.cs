@@ -18,8 +18,8 @@ namespace WebApplication3
             UserToken = "hfdj13urfrjgdfh43k";
             Users = new List<User>()
             {
-                new User() { Id = 1, Name = "Ben", Phone = "123123"  },
-                new User() { Id = 2, Name = "Raz", Phone = "456456"  }
+                new User() { Id = 1, Username = "Ben", Phone = "123123"  },
+                new User() { Id = 2, Username = "Raz", Phone = "456456"  }
             };
             Products = new List<Product>()
             {

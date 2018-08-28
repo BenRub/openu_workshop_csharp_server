@@ -188,7 +188,6 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Models\Item.cs" />
-    <Compile Include="Models\LoginInfo.cs" />
     <Compile Include="StoreDB.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

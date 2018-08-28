@@ -10,7 +10,7 @@ namespace WebApplication3.Controllers
 {
     public class LoginController : ApiController
     {
-        public string Post(LoginInfo info)
+        public string Post(User info)
         {
             return StoreDB.UserToken;
         }

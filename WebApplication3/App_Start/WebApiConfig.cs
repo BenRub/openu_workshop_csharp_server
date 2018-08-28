@@ -20,7 +20,7 @@ namespace WebApplication3
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            config.Filters.Add(new TokenAuthorizeAttribute());
+            //config.Filters.Add(new TokenAuthorizeAttribute());
         }
     }
 }
