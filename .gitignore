@@ -1,5 +1,6 @@
-# visual studio folder
+# visual studio folders
 .vs
+packages
 
 # Compiled class file
 *.class
