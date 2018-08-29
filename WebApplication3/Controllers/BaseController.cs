@@ -35,5 +35,19 @@ namespace WebApplication3.Controllers
             item.Id = id;
             items.Add(item);
         }
+
+        public void Put(int id, [FromBody]T newItem)
+        {
+            var item = Get(id);
+            newItem.Id = id;
+            items.Remove(item);
+            items.Add(newItem);
+        }
+
+        public void Delete(int id)
+        {
+            var item = Get(id);
+            items.Remove(item);
+        }
     }
 }
