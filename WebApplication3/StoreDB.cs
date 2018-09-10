@@ -30,10 +30,10 @@ namespace WebApplication3
             };
             Products = new List<Product>()
             {
-                new Product() { Id = 1, Title = "Fridge"  },
-                new Product() { Id = 2, Title = "Bed"  },
-                new Product() { Id = 3, Title = "TV"  },
-                new Product() { Id = 4, Title = "Table"  }
+                new Product() { Id = 1, Title = "Fridge", Picture = "pic1"  },
+                new Product() { Id = 2, Title = "Bed", Picture = "pic2"  },
+                new Product() { Id = 3, Title = "TV", Picture = "pic3"  },
+                new Product() { Id = 4, Title = "Table", Picture = "pic4"  }
             };
             CategoryToProducts = new Dictionary<int, List<int>>()
             {
@@ -45,9 +45,9 @@ namespace WebApplication3
                 new Order() { Id = 1, UserId = 1,
                     ProductsToAmount = new Dictionary<int, int>() { [1]  = 1, [3]  = 4 } }, //Ben Ordered 1 Fridge and 4 TVs
                 new Order() { Id = 2, UserId = 2,
-                    ProductsToAmount = new Dictionary<int, int>() { [4]  = 1 } }, //Raz Ordered 1 Table
+                    ProductsToAmount = new Dictionary<int, int>() { [4]  = 1 }, Delivered = true }, //Raz Ordered 1 Table
                 new Order() { Id = 3, UserId = 1,
-                    ProductsToAmount = new Dictionary<int, int>() { [2]  = 2 } } //Ben Ordered 2 Ben
+                    ProductsToAmount = new Dictionary<int, int>() { [2]  = 2 } } //Ben Ordered 2 Beds
             };
         }
     }

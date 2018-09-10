@@ -40,8 +40,8 @@ namespace WebApplication3.Controllers
         {
             var item = Select(id);
             newItem.Id = id;
-            items.Remove(item);
-            items.Add(newItem);
+            var index = items.IndexOf(item);
+            items[index] = newItem;
         }
 
         public virtual void Remove(int id)
