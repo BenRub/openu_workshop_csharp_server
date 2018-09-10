@@ -16,12 +16,12 @@ namespace WebApplication3.Controllers
             this.items = items;
         }
 
-        public List<T> Get()
+        public virtual List<T> Select()
         {
             return items;
         }
 
-        public T Get(int id)
+        public virtual T Select(int id)
         {
             var item = items.FirstOrDefault(i => i.Id == id);
             if (item == null)
@@ -29,24 +29,24 @@ namespace WebApplication3.Controllers
             return item;
         }
 
-        public void Post(T item)
+        public virtual void Create(T item)
         {
             var id = items.Max(i => i.Id) + 1;
             item.Id = id;
             items.Add(item);
         }
 
-        public void Put(int id, [FromBody]T newItem)
+        public virtual void Update(int id, [FromBody]T newItem)
         {
-            var item = Get(id);
+            var item = Select(id);
             newItem.Id = id;
             items.Remove(item);
             items.Add(newItem);
         }
 
-        public void Delete(int id)
+        public virtual void Remove(int id)
         {
-            var item = Get(id);
+            var item = Select(id);
             items.Remove(item);
         }
     }

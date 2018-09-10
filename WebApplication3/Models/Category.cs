@@ -5,9 +5,8 @@ using System.Web;
 
 namespace WebApplication3.Models
 {
-    public class Product : ItemWithId
+    public class Category : ItemWithId
     {
-        public string Title { get; set; }
-        public string Picture { get; set; }
+        public string Name { get; set; }
     }
 }

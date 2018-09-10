@@ -8,9 +8,19 @@ using WebApplication3.Models;
 
 namespace WebApplication3.Controllers
 {
+    [RoutePrefix("api/Login")]
     public class LoginController : ApiController
     {
-        public string Post(User info)
+        [HttpGet]
+        [Route("")]
+        public string Get()
+        {
+            return "gfgfgf";
+        }
+
+        [HttpPost]
+        [Route("")]
+        public string Post([FromBody]User info)
         {
             return StoreDB.UserToken;
         }
