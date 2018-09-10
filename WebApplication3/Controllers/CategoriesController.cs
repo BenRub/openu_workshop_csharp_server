@@ -28,15 +28,25 @@ namespace WebApplication3.Controllers
         [HttpDelete, Route("{id:int}")]
         public override void Remove(int id) { base.Remove(id); }
 
-        [Route("{productId:int}/products")]
+        [Route("{categoryId:int}/products")]
         [HttpGet]
-        public List<Product> ProductsByCategory(int productId)
+        public List<Product> ProductsByCategory(int categoryId)
         {
             List<int> productsIds;
-            bool categoryHasProducts = StoreDB.CategoryToProducts.TryGetValue(productId, out productsIds);
+            bool categoryHasProducts = StoreDB.CategoryToProducts.TryGetValue(categoryId, out productsIds);
             if (!categoryHasProducts)
                 return new List<Product>();
             return productsIds.Select(pid => StoreDB.Products.FirstOrDefault(p => p.Id == pid)).ToList();
+        }
+
+        [Route("{categoryId:int}/products")]
+        [HttpPost]
+        public void CreateProduct(int categoryId, [FromBody]Product product)
+        {
+            new ProductsController().Create(product);
+            if (!StoreDB.CategoryToProducts.ContainsKey(categoryId))
+                StoreDB.CategoryToProducts[categoryId] = new List<int>();
+            StoreDB.CategoryToProducts[categoryId].Add(product.Id);
         }
     }
 }
